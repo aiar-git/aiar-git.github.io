@@ -8,6 +8,8 @@ export interface Project {
   size: 'large' | 'small';
   videoUrl?: string;
   videoButtonText?: string;
+  keywords?: string[];
+  featured?: boolean;
 }
 
 export interface NavItem {

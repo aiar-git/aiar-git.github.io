@@ -16,28 +16,9 @@ export const PROJECTS: Project[] = [
     imageUrl: '/assets/img/dod_small.gif',
     size: 'large',
     videoUrl: 'https://www.youtube.com/watch?v=Ge_RsdAvaOA&ab_channel=aiar',
-    videoButtonText: 'Watch Documentary'
-  },
-  {
-    id: '2',
-    title: 'Evolving Music System',
-    hostedBy: 'Diverse Intelligence Summer Institute',
-    description: 'Yongbom and Harin recently attended the Diverse Intelligence Summer Institute in St Andrews, Scotland. During their time there under the scottish summer sun, they developed a prototype of an evolving music system using MaxMSP. A system in which it searches the timbre space along a dimension across each generation, where the selection pressure is introduced by the listener\'s brain state.',
-    year: '2022',
-    imageUrl: '/assets/img/geneic-algorithm.gif',
-    size: 'small',
-    videoUrl: 'https://youtu.be/bru3k88P7-k'
-  },
-  {
-    id: '3',
-    title: 'Co-Shape',
-    hostedBy: 'Kulturnhalle Leipzig',
-    description: "On 7th of July 2022, the aiar collective presented an interactive electroencephalogram-sound installation and performance at the Kulturnhalle Leipzig. Arriving audiences entered a soundscape that is modulated by the performer's state of mind. At the same time, the audiences' physical motion was tracked in real-time and represented on a large wall, also altering the soundscapes according to the captured movement density in the room. As the audience interacts with the audio scene, their presence and movements affected the internal state of the performer, creating a generative composition that merges sound, space, and meditative states.",
-    year: '2022',
-    imageUrl: '/assets/img/kultonhalle_poster_new_poster.jpg',
-    size: 'small',
-    videoUrl: 'https://youtu.be/MA7DizcPu_c',
-    videoButtonText: 'Watch Video'
+    videoButtonText: 'Watch Documentary',
+    keywords: ['IMMERSIVE ENVIRONMENTS', 'INSTALLATIONS', 'LIGHT ART'],
+    featured: true
   },
   {
     id: '4',
@@ -48,7 +29,32 @@ export const PROJECTS: Project[] = [
     imageUrl: '/assets/img/think_sync_sink_small.gif',
     size: 'large',
     videoUrl: 'https://youtu.be/qn_FZrT1TqI',
-    videoButtonText: 'Watch Video'
+    videoButtonText: 'Watch Video',
+    keywords: ['PERFORMANCES', 'A/V', 'IMMERSIVE ENVIRONMENTS'],
+    featured: true
+  },
+  {
+    id: '2',
+    title: 'Evolving Music System',
+    hostedBy: 'Diverse Intelligence Summer Institute',
+    description: 'Yongbom and Harin recently attended the Diverse Intelligence Summer Institute in St Andrews, Scotland. During their time there under the scottish summer sun, they developed a prototype of an evolving music system using MaxMSP. A system in which it searches the timbre space along a dimension across each generation, where the selection pressure is introduced by the listener\'s brain state.',
+    year: '2022',
+    imageUrl: '/assets/img/geneic-algorithm.gif',
+    size: 'small',
+    videoUrl: 'https://youtu.be/bru3k88P7-k',
+    keywords: ['TECHNOLOGY', 'SOUND', 'RESEARCH']
+  },
+  {
+    id: '3',
+    title: 'Co-Shape',
+    hostedBy: 'Kulturnhalle Leipzig',
+    description: "On 7th of July 2022, the aiar collective presented an interactive electroencephalogram-sound installation and performance at the Kulturnhalle Leipzig. Arriving audiences entered a soundscape that is modulated by the performer's state of mind. At the same time, the audiences' physical motion was tracked in real-time and represented on a large wall, also altering the soundscapes according to the captured movement density in the room. As the audience interacts with the audio scene, their presence and movements affected the internal state of the performer, creating a generative composition that merges sound, space, and meditative states.",
+    year: '2022',
+    imageUrl: '/assets/img/kultonhalle_poster_new_poster.jpg',
+    size: 'small',
+    videoUrl: 'https://youtu.be/MA7DizcPu_c',
+    videoButtonText: 'Watch Video',
+    keywords: ['INSTALLATIONS', 'PERFORMANCES', 'SOUND']
   },
   {
     id: '5',
@@ -59,9 +65,13 @@ export const PROJECTS: Project[] = [
     imageUrl: '/assets/img/cellogram_small.gif',
     size: 'small',
     videoUrl: 'https://youtu.be/B2mXgu1bbRU',
-    videoButtonText: 'Watch Video'
+    videoButtonText: 'Watch Video',
+    keywords: ['PERFORMANCES', 'SOUND', 'TECHNOLOGY']
   }
 ];
+
+export const FEATURED_PROJECTS = PROJECTS.filter(p => p.featured);
+export const ALL_PROJECTS = PROJECTS;
 
 export const MEMBERS: Member[] = [
   {

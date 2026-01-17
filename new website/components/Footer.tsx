@@ -57,10 +57,12 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      <div className="w-full overflow-hidden">
-        <h1 className="text-[20vw] leading-none font-bold tracking-tighter text-center md:text-left">
-          aiar
-        </h1>
+      <div className="w-full overflow-hidden flex justify-center md:justify-start">
+        <img 
+          src="/assets/img/aiar_bw.png" 
+          alt="aiar" 
+          className="w-full max-w-xs h-auto"
+        />
       </div>
       
       <div className="flex justify-between items-end mt-4 text-xs font-mono uppercase text-stone-500">
