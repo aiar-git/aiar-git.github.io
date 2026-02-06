@@ -1,0 +1,62 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - gh-pages
+    paths:
+      - 'components/**'
+      - 'constants.ts'
+      - 'types.ts'
+      - 'App.tsx'
+      - 'index.tsx'
+      - 'index.html'
+      - 'public/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Backup source files
+          mkdir -p temp_backup
+          cp -r components constants.ts types.ts App.tsx index.tsx public package.json package-lock.json tsconfig.json vite.config.ts README.md CNAME temp_backup/
+          
+          # Remove old deployed files
+          rm -rf assets *.js *.css index.html 2>/dev/null || true
+          
+          # Copy new build
+          cp -r dist/* .
+          
+          # Restore source files
+          cp -r temp_backup/* .
+          rm -rf temp_backup dist
+          
+          # Stage and commit if there are changes
+          git add .
+          git diff --staged --quiet || git commit -m "Auto-deploy website"
+          git push

@@ -1,0 +1,189 @@
+import React, { useState } from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import ProjectCard from './components/ProjectCard';
+import ProjectGridCard from './components/ProjectGridCard';
+import ProjectModal from './components/ProjectModal';
+import Footer from './components/Footer';
+import { FEATURED_PROJECTS, ALL_PROJECTS, MEMBERS } from './constants';
+import { Project } from './types';
+
+const App: React.FC = () => {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  return (
+    <div className="min-h-screen bg-stone-100 text-stone-900 selection:bg-stone-900 selection:text-white font-sans">
+      <Header />
+      
+      <main>
+        <Hero />
+
+        {/* Introduction Section */}
+        <section className="px-6 md:px-12 py-24 md:py-40 grid grid-cols-1 md:grid-cols-12 gap-8 border-b border-stone-200">
+          <div className="md:col-span-7">
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight mb-12">
+              An international team of artists and scientists
+            </h2>
+          </div>
+          <div className="md:col-span-5 flex flex-col justify-end">
+             <p className="text-lg md:text-xl leading-relaxed text-stone-600">
+               We integrate brain imaging tools such as electroencephalography (EEG) and Functional near-infrared spectroscopy (fNIRS) to measure and implement brain oscillations into various live artistic practices.
+             </p>
+          </div>
+        </section>
+
+        {/* Upcoming Section */}
+        <section className="px-6 md:px-12 py-24 border-b border-stone-200">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-16">Upcoming</h2>
+          
+          <div className="relative w-full bg-stone-200">
+            <img 
+              src="/assets/img/berlinale.jpg" 
+              alt="Berlinale Film Festival 2026" 
+              className="w-full h-auto object-contain"
+            />
+            <a 
+              href="https://www.berlinale.de/en/2026/programme/202609855.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute bottom-6 right-6 px-5 py-2.5 bg-stone-900 text-white text-xs md:text-sm font-medium uppercase tracking-wide hover:bg-stone-700 transition-colors"
+            >
+              See Details
+            </a>
+          </div>
+        </section>
+
+        {/* Featured Projects Section */}
+        <section id="work" className="px-6 md:px-12 py-24">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-16">Featured Projects</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+            {FEATURED_PROJECTS.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+        </section>
+
+        {/* All Projects Section */}
+        <section className="px-6 md:px-12 py-24 border-t border-stone-200">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-16">All Projects</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12">
+            {ALL_PROJECTS.map((project) => (
+              <ProjectGridCard 
+                key={project.id} 
+                project={project}
+                onClick={() => setSelectedProject(project)}
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* Collaborators Section */}
+        <section className="px-6 md:px-12 py-24 border-t border-stone-200 bg-white">
+             <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tighter max-w-sm">
+                    Organisations who worked with us
+                </h2>
+                
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center md:col-span-3">
+                  {/* Logos in organized grid - width-based for proper proportions */}
+                  <div className="flex items-center justify-center">
+                    <img src="/assets/img/max planck.png" alt="Max Planck Institute" className="w-full max-w-[140px] h-auto opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                  </div>
+                  
+                  <div className="flex items-center justify-center">
+                    <img src="/assets/img/cambridge_colour.png" alt="University of Cambridge" className="w-full max-w-[140px] h-auto opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                  </div>
+                  
+                  <div className="flex items-center justify-center">
+                    <img src="/assets/img/Universität_Leipzig_logo.png" alt="Universität Leipzig" className="w-full max-w-[120px] h-auto opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                  </div>
+                  
+                  <div className="flex items-center justify-center">
+                    <img src="/assets/img/Yonsei_Logo.png" alt="Yonsei University" className="w-full max-w-[60px] h-auto opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                  </div>
+                  
+                  <div className="flex items-center justify-center">
+                    <img src="/assets/img/NIRx_logo.webp" alt="NIRx" className="w-full max-w-[60px] h-auto opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                  </div>
+                  
+                  <div className="flex items-center justify-center">
+                    <img src="/assets/img/amarte.png" alt="Amarte" className="w-full max-w-[120px] h-auto opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                  </div>
+                  
+                  <div className="flex items-center justify-center">
+                    <img src="/assets/img/stadt_leipzig_logo.svg" alt="Stadt Leipzig" className="w-full max-w-[120px] h-auto opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                  </div>
+                  
+                  <div className="flex items-center justify-center">
+                    <img src="/assets/img/dog_NP3_blackglow.png" alt="NP3" className="w-full max-w-[60px] h-auto opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                  </div>
+                  
+                  <div className="flex items-center justify-center">
+                    <img src="/assets/img/gemennte.png" alt="Gemennte" className="w-full max-w-[120px] h-auto opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                  </div>
+                  
+                  <div className="flex items-center justify-center">
+                    <img src="/assets/img/berghain.png" alt="Berghain" className="w-full max-w-[120px] h-auto opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                  </div>
+                  
+                  <div className="flex items-center justify-center">
+                    <img src="/assets/img/ccn logo.png" alt="CCN" className="w-full max-w-[120px] h-auto opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                  </div>
+                </div>
+             </div>
+        </section>
+
+        {/* The Collective Section */}
+        <section id="collective" className="px-6 md:px-12 py-24 bg-stone-100 border-t border-stone-200">
+             <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-20">
+                The Collective
+             </h2>
+             <div className="grid grid-cols-1 md:grid-cols-4 gap-x-6 gap-y-12">
+                 {MEMBERS.map((member, i) => (
+                     <div key={i} className="flex flex-col gap-4">
+                         <div className="aspect-square w-full overflow-hidden bg-stone-200">
+                             <img 
+                                src={member.imageUrl} 
+                                alt={member.name} 
+                                className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700"
+                                style={{ objectPosition: member.name === 'Harin Lee' ? 'center' : 'center 60%' }}
+                             />
+                         </div>
+                         <div>
+                            <h4 className="font-bold text-lg md:text-xl tracking-tight mb-2">{member.name}</h4>
+                            <p className="text-[10px] md:text-xs font-mono uppercase text-stone-500 mb-3 tracking-wide">{member.role}</p>
+                            <p className="text-stone-700 leading-relaxed text-xs md:text-sm mb-3">
+                                {member.bio}
+                            </p>
+                            {member.website && (
+                              <a 
+                                href={member.website} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="text-xs text-stone-900 hover:text-stone-600 underline"
+                              >
+                                website
+                              </a>
+                            )}
+                         </div>
+                     </div>
+                 ))}
+             </div>
+        </section>
+
+      </main>
+
+      <Footer />
+      
+      {/* Project Modal */}
+      <ProjectModal 
+        project={selectedProject} 
+        onClose={() => setSelectedProject(null)} 
+      />
+    </div>
+  );
+};
+
+export default App;
