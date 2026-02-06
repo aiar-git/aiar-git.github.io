@@ -99,7 +99,7 @@ const App: React.FC = () => {
                   <div className="flex items-center justify-center">
                     <img src="/assets/img/Universität_Leipzig_logo.png" alt="Universität Leipzig" className="w-full max-w-[120px] h-auto opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
                   </div>
-                  
+                  ¡
                   <div className="flex items-center justify-center">
                     <img src="/assets/img/Yonsei_Logo.png" alt="Yonsei University" className="w-full max-w-[60px] h-auto opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
                   </div>

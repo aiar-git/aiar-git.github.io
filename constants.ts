@@ -15,6 +15,8 @@ export const PROJECTS: Project[] = [
     year: '2025',
     imageUrl: '/assets/img/CCN.png',
     size: 'small',
+    videoUrl: 'https://vimeo.com/1113226112',
+    videoButtonText: 'Watch Video',
     keywords: ['NEUROSCIENCE', 'CONFERENCE', 'AUDIO-VISUAL']
   },
   {
@@ -44,6 +46,8 @@ export const PROJECTS: Project[] = [
     description: "Building on the live performance of Dream of Others, the collective created an installation piece exhibited at the contemporary experimental art space NP3 in Groningen. Video recordings from the performance played on loop with a surveillance aesthetic, while brain signals that drove the entire installation were graphically visualized and interacted with a three-dimensional model of the brain on a larger screen. A standalone light display visible from the street reproduced the recorded signals in real time through different configurations of lights. Members of the public had the opportunity, by appointment, to wear the EEG helmet and interact directly with the feedback systems used for the performance and installation.",
     year: '2024',
     imageUrl: '/assets/img/DoO_Np3.gif',
+    videoUrl: 'https://vimeo.com/948453168',
+    videoButtonText: 'Watch Video',
     size: 'large',
     keywords: ['EXHIBITION', 'INTERACTIVE', 'PUBLIC']
   },
