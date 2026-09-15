@@ -32,23 +32,34 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* Upcoming Section */}
+        {/* Past performances section */}
         <section className="px-6 md:px-12 py-24 border-b border-stone-200">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-16">Upcoming</h2>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-16">Past Performances</h2>
           
-          <div className="relative w-full bg-stone-200">
+          <div className="w-full bg-stone-200">
             <img 
               src="/assets/img/berlinale.jpg" 
               alt="Berlinale Film Festival 2026" 
               className="w-full h-auto object-contain"
             />
+          </div>
+          <div className="mt-6 flex flex-wrap items-center gap-4">
+            <p className="mr-auto text-lg font-medium">Berlinale 2026</p>
             <a 
               href="https://www.berlinale.de/en/2026/programme/202609855.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="absolute bottom-6 right-6 px-5 py-2.5 bg-stone-900 text-white text-xs md:text-sm font-medium uppercase tracking-wide hover:bg-stone-700 transition-colors"
+              className="px-5 py-2.5 bg-stone-900 text-white text-xs md:text-sm font-medium uppercase tracking-wide hover:bg-stone-700 transition-colors"
             >
-              See Details
+              Event Details
+            </a>
+            <a
+              href="https://youtu.be/ERgVaeNSuho?is=1fOeWZJUtPqGoUYK"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 border border-stone-900 text-stone-900 text-xs md:text-sm font-medium uppercase tracking-wide hover:bg-stone-900 hover:text-white transition-colors"
+            >
+              Watch fNIRs Video
             </a>
           </div>
         </section>
