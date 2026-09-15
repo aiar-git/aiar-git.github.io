@@ -16,7 +16,7 @@ const ProjectGridCard: React.FC<ProjectGridCardProps> = ({ project, onClick }) =
         <img 
           src={project.imageUrl} 
           alt={project.title} 
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className={`w-full h-full ${project.imageFit === 'contain' ? 'object-contain' : 'object-cover'} transition-transform duration-700 group-hover:scale-105`}
         />
       </div>
       

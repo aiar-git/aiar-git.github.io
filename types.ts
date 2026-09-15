@@ -5,9 +5,11 @@ export interface Project {
   description: string;
   year: string;
   imageUrl: string;
+  imageFit?: 'cover' | 'contain';
   size: 'large' | 'small';
   videoUrl?: string;
   videoButtonText?: string;
+  eventUrl?: string;
   keywords?: string[];
   featured?: boolean;
 }

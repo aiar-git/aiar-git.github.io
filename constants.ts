@@ -8,6 +8,21 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const PROJECTS: Project[] = [
   {
+    id: 'berlinale-2026',
+    title: 'Secrets of a Soul at Berlinale',
+    hostedBy: 'Berlinale Classics',
+    description: "At the 2026 Berlinale Classics screening of the restored silent film Secrets of a Soul, the aiar collective captured the violist's brain activity with fNIRS during a live performance by Broken Frames Syndicate. The signals shaped electronic sound and light in real time alongside Yongbom Lee's composition.",
+    year: '2026',
+    imageUrl: '/assets/img/berlinale.jpg',
+    imageFit: 'contain',
+    size: 'large',
+    videoUrl: 'https://youtu.be/ERgVaeNSuho?is=1fOeWZJUtPqGoUYK',
+    videoButtonText: 'Watch fNIRs Video',
+    eventUrl: 'https://www.berlinale.de/en/2026/programme/202609855.html',
+    keywords: ['FILM', 'FNIRS', 'LIVE PERFORMANCE'],
+    featured: true
+  },
+  {
     id: '1',
     title: 'Brain Storm',
     hostedBy: '8th Annual Conference on Cognitive Computational Neuroscience',

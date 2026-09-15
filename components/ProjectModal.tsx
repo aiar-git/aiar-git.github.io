@@ -81,6 +81,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
             <p className="text-stone-700 leading-relaxed">{project.description}</p>
           </div>
 
+          <div className="flex flex-wrap gap-3">
           {project.videoUrl && project.videoButtonText && (
             <a 
               href={project.videoUrl}
@@ -94,6 +95,17 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
               {project.videoButtonText}
             </a>
           )}
+          {project.eventUrl && (
+            <a
+              href={project.eventUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 border border-stone-900 text-stone-900 text-sm font-medium uppercase tracking-wide hover:bg-stone-900 hover:text-white transition-colors"
+            >
+              Event details
+            </a>
+          )}
+          </div>
         </div>
       </div>
     </div>

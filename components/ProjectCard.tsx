@@ -12,7 +12,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <img 
           src={project.imageUrl} 
           alt={project.title} 
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className={`w-full h-full ${project.imageFit === 'contain' ? 'object-contain' : 'object-cover'} transition-transform duration-700 group-hover:scale-105`}
         />
         
         {project.videoUrl && project.videoButtonText && (
@@ -47,6 +47,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <div className="md:col-span-5 text-stone-500">
              <span className="block text-stone-900 font-medium mb-1">Description</span>
              <p className="leading-relaxed">{project.description}</p>
+             {project.eventUrl && (
+               <a href={project.eventUrl} target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-stone-900 underline hover:text-stone-600">
+                 Event details
+               </a>
+             )}
         </div>
         
         <div className="md:col-span-2 text-stone-500 text-left md:text-right">
