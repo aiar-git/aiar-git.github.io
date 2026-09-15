@@ -11,6 +11,10 @@ on:
       - 'App.tsx'
       - 'index.tsx'
       - 'index.html'
+      - 'index.template.html'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'vite.config.ts'
       - 'public/**'
   workflow_dispatch:
 
